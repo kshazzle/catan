@@ -5,7 +5,11 @@ import cors from 'cors';
 import { ClientToServerEvents, ServerToClientEvents } from './types';
 import { setupSocketHandlers } from './sockets/handlers';
 
-const PORT = process.env.PORT || 3001;
+// Railway provides PORT via environment variable - MUST use it
+const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3001;
+
+console.log(`Environment PORT: ${process.env.PORT}`);
+console.log(`Using PORT: ${PORT}`);
 
 const app = express();
 app.use(cors());
@@ -51,7 +55,7 @@ app.get('/socket-test', (req, res) => {
 // Setup socket handlers
 setupSocketHandlers(io);
 
-httpServer.listen(PORT, () => {
-  console.log(`🎮 HexLands server running on port ${PORT}`);
+httpServer.listen(PORT, '0.0.0.0', () => {
+  console.log(`🎮 HexLands server running on port ${PORT} (env PORT: ${process.env.PORT || 'not set'})`);
 });
 
