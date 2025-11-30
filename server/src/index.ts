@@ -23,11 +23,24 @@ const io = new Server<ClientToServerEvents, ServerToClientEvents>(httpServer, {
     methods: ['GET', 'POST'],
     credentials: true,
   },
+  transports: ['polling', 'websocket'], // Support both for Render compatibility
+  allowEIO3: true, // Allow Engine.IO v3 clients
+  pingTimeout: 60000, // Increase timeout for Render free tier
+  pingInterval: 25000,
 });
 
 // Health check endpoint
 app.get('/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
+});
+
+// Socket.IO test endpoint
+app.get('/socket-test', (req, res) => {
+  res.json({ 
+    status: 'ok', 
+    socketIo: 'available',
+    timestamp: new Date().toISOString() 
+  });
 });
 
 // Setup socket handlers
