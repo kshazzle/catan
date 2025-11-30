@@ -29,6 +29,11 @@ const io = new Server<ClientToServerEvents, ServerToClientEvents>(httpServer, {
   pingInterval: 25000,
 });
 
+// Root endpoint for Railway healthcheck
+app.get('/', (req, res) => {
+  res.json({ status: 'ok', service: 'hexlands-server', timestamp: new Date().toISOString() });
+});
+
 // Health check endpoint
 app.get('/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
