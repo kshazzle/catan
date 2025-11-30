@@ -57,8 +57,15 @@ class SocketService {
         return;
       }
 
+      // Try polling first for Render free tier compatibility, then upgrade to websocket
       this.socket = io(SOCKET_URL, {
-        transports: ['websocket', 'polling'],
+        transports: ['polling', 'websocket'], // Try polling first
+        upgrade: true, // Allow upgrade to websocket
+        timeout: 20000, // 20 seconds
+        reconnection: true,
+        reconnectionDelay: 1000,
+        reconnectionAttempts: 5,
+        forceNew: false,
       });
 
       this.socket.on('connect', () => {
