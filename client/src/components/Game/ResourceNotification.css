@@ -1,0 +1,195 @@
+.resource-notification {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 1000;
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.95), rgba(22, 163, 74, 0.95));
+  border: 1px solid rgba(134, 239, 172, 0.5);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  min-width: 200px;
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(34, 197, 94, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.resource-notification.trade-notification {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.95), rgba(37, 99, 235, 0.95));
+  border: 1px solid rgba(147, 197, 253, 0.5);
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+.resource-notification.steal-notification {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.95), rgba(185, 28, 28, 0.95));
+  border: 1px solid rgba(252, 165, 165, 0.5);
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(239, 68, 68, 0.3);
+}
+
+.notification-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: white;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.notification-icon {
+  font-size: 1.25rem;
+}
+
+.notification-resources {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.notification-resource {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.4rem 0.6rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+}
+
+.resource-emoji {
+  font-size: 1.5rem;
+}
+
+.resource-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.resource-amount {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  font-family: var(--font-mono);
+}
+
+.resource-name {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Animation for each resource item */
+.notification-resource {
+  animation: slideIn 0.3s ease-out forwards;
+  opacity: 0;
+}
+
+.notification-resource:nth-child(1) { animation-delay: 0.05s; }
+.notification-resource:nth-child(2) { animation-delay: 0.1s; }
+.notification-resource:nth-child(3) { animation-delay: 0.15s; }
+.notification-resource:nth-child(4) { animation-delay: 0.2s; }
+.notification-resource:nth-child(5) { animation-delay: 0.25s; }
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Dev Card Notification */
+.devcard-notification {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1001;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.95), rgba(126, 34, 206, 0.95));
+  border: 2px solid rgba(216, 180, 254, 0.5);
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  min-width: 280px;
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(168, 85, 247, 0.4);
+  text-align: center;
+}
+
+.devcard-notification-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.devcard-notification-icon {
+  font-size: 1.25rem;
+}
+
+.devcard-notification-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  margin-bottom: 0.75rem;
+}
+
+.devcard-big-icon {
+  font-size: 3rem;
+  animation: cardReveal 0.5s ease-out;
+}
+
+@keyframes cardReveal {
+  0% {
+    transform: rotateY(90deg) scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.devcard-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.devcard-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: white;
+}
+
+.devcard-desc {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.devcard-tip {
+  font-size: 0.8rem;
+  color: #fde047;
+  background: rgba(253, 224, 71, 0.15);
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  margin-top: 0.5rem;
+}
+

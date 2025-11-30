@@ -1,0 +1,183 @@
+.home-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+.home-header {
+  text-align: center;
+}
+
+.logo-container {
+  margin-bottom: 1rem;
+}
+
+.logo-hex {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  box-shadow: 0 0 40px rgba(139, 92, 246, 0.4);
+  animation: logoPulse 3s ease-in-out infinite;
+}
+
+.logo-icon {
+  font-size: 3rem;
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes logoPulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 40px rgba(139, 92, 246, 0.4); }
+  50% { transform: scale(1.05); box-shadow: 0 0 60px rgba(139, 92, 246, 0.6); }
+}
+
+.game-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.25rem;
+}
+
+.game-subtitle {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.home-card {
+  width: 100%;
+  padding: 2rem;
+}
+
+.menu-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.btn-large {
+  padding: 1.25rem 2rem;
+  font-size: 1.2rem;
+}
+
+.btn-secondary-gradient {
+  background: var(--gradient-cool);
+}
+
+.btn-icon-left {
+  margin-right: 0.5rem;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.back-btn {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0.5rem 0;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  transition: color var(--transition-fast);
+}
+
+.back-btn:hover {
+  color: var(--text-primary);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.room-code-input {
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  letter-spacing: 0.3em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.form-error {
+  color: #f87171;
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  background: rgba(239, 68, 68, 0.1);
+  border-radius: var(--radius-sm);
+  text-align: center;
+}
+
+.home-settings {
+  display: flex;
+  justify-content: center;
+}
+
+.toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.toggle-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--neon-purple);
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .home-container {
+    padding: 1rem;
+  }
+  
+  .game-title {
+    font-size: 2.5rem;
+  }
+  
+  .home-card {
+    padding: 1.5rem;
+  }
+  
+  .btn-large {
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+  }
+}
+

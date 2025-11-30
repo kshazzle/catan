@@ -1,0 +1,283 @@
+.lobby-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.lobby-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 480px;
+}
+
+.lobby-header {
+  text-align: center;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  transition: color var(--transition-fast);
+}
+
+.back-link:hover {
+  color: var(--text-primary);
+}
+
+.lobby-title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* Room Code Card */
+.room-code-card {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.room-code-label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.room-code-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.room-code-value {
+  font-family: var(--font-mono);
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.copy-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 1.25rem;
+  transition: all var(--transition-fast);
+}
+
+.copy-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.room-code-hint {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.75rem;
+}
+
+/* Players Card */
+.players-card {
+  padding: 1.5rem;
+}
+
+.players-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.players-header h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.max-players-select {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.max-players-select label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.select-input {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  padding: 0.4rem 0.75rem;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.players-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.player-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius-md);
+  transition: background var(--transition-fast);
+}
+
+.player-card:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.player-card.empty {
+  opacity: 0.5;
+}
+
+.player-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.player-avatar.empty {
+  background: var(--bg-tertiary);
+  color: var(--text-muted);
+}
+
+.player-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.player-name {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.you-badge {
+  margin-left: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+.host-badge {
+  font-size: 0.75rem;
+  color: var(--neon-cyan);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.player-color-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-shadow: 0 0 8px currentColor;
+}
+
+.waiting-text {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* Start Button */
+.start-btn {
+  width: 100%;
+  padding: 1.25rem;
+  font-size: 1.2rem;
+}
+
+.start-hint {
+  text-align: center;
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.waiting-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.waiting-spinner {
+  font-size: 2rem;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.waiting-message p {
+  color: var(--text-secondary);
+}
+
+@media (max-width: 640px) {
+  .lobby-container {
+    padding: 1rem;
+  }
+  
+  .lobby-title {
+    font-size: 1.75rem;
+  }
+  
+  .room-code-value {
+    font-size: 2rem;
+  }
+  
+  .player-card {
+    padding: 0.625rem;
+  }
+  
+  .player-avatar {
+    width: 38px;
+    height: 38px;
+    font-size: 1.1rem;
+  }
+}
+

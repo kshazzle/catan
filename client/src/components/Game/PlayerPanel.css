@@ -1,0 +1,206 @@
+.player-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  overflow: hidden;
+}
+
+.panel-title {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+  padding: 0 0.5rem;
+}
+
+.players-list-game {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  overflow-y: auto;
+}
+
+.player-card-game {
+  position: relative;
+  padding: 0.875rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.player-card-game.current-turn {
+  border-color: var(--player-color);
+  box-shadow: 0 0 15px color-mix(in srgb, var(--player-color) 30%, transparent);
+}
+
+.player-card-game.is-me {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.player-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.player-avatar-game {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+  flex-shrink: 0;
+}
+
+.player-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.player-name-game {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.me-badge {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--neon-cyan);
+  background: rgba(34, 211, 238, 0.15);
+  padding: 0.1rem 0.4rem;
+  border-radius: var(--radius-sm);
+}
+
+.disconnected-badge {
+  display: block;
+  font-size: 0.7rem;
+  color: #f87171;
+  margin-top: 0.15rem;
+}
+
+.player-vp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: var(--radius-sm);
+}
+
+.vp-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  line-height: 1;
+}
+
+.vp-label {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.player-stats {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  padding: 0.4rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius-sm);
+}
+
+.stat-icon {
+  font-size: 1rem;
+}
+
+.stat-value {
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: var(--font-mono);
+}
+
+.player-buildings {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.building-stat {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.achievements {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.achievement {
+  padding: 0.3rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.achievement.longest-road {
+  background: rgba(34, 211, 238, 0.15);
+  border: 1px solid rgba(34, 211, 238, 0.3);
+  color: #22d3ee;
+}
+
+.achievement.largest-army {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #f87171;
+}
+
+.turn-indicator-dot {
+  position: absolute;
+  top: 50%;
+  left: -6px;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background: var(--player-color);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--player-color);
+}
+
+/* Mobile horizontal layout */
+@media (max-width: 1024px) {
+  .players-list-game {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
+  
+  .player-card-game {
+    min-width: 200px;
+    flex-shrink: 0;
+  }
+}

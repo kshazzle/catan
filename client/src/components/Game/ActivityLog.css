@@ -1,0 +1,89 @@
+.activity-log {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  overflow: hidden;
+}
+
+.log-entries {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.log-entry {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+}
+
+.log-icon {
+  flex-shrink: 0;
+  font-size: 1rem;
+}
+
+.log-message {
+  flex: 1;
+  padding-left: 0.5rem;
+  border-left: 2px solid transparent;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* Entry type colors */
+.log-entry.roll .log-message {
+  color: var(--text-primary);
+}
+
+.log-entry.build .log-message {
+  color: var(--neon-green);
+}
+
+.log-entry.trade .log-message {
+  color: var(--neon-cyan);
+}
+
+.log-entry.robber .log-message {
+  color: var(--neon-orange);
+}
+
+.log-entry.victory .log-message {
+  color: var(--neon-pink);
+  font-weight: 600;
+}
+
+.log-entry.devcard .log-message {
+  color: var(--neon-purple);
+}
+
+.log-entry.system {
+  background: rgba(168, 85, 247, 0.1);
+}
+
+.log-entry.system .log-message {
+  color: var(--neon-purple);
+}
+
+/* Mobile horizontal layout */
+@media (max-width: 1024px) {
+  .log-entries {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-right: 0;
+    padding-bottom: 0.5rem;
+  }
+  
+  .log-entry {
+    min-width: 200px;
+    flex-shrink: 0;
+  }
+}
+
