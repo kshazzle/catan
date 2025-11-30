@@ -42,7 +42,9 @@ interface ClientToServerEvents {
 type TypedSocket = Socket<ServerToClientEvents, ClientToServerEvents>;
 
 // In development, use localhost. In production, use the VITE_API_URL environment variable
-const SOCKET_URL = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? 'http://localhost:3001' : '');
+// Fallback to Render backend if env var not set (for production builds)
+const SOCKET_URL = import.meta.env.VITE_API_URL || 
+  (import.meta.env.DEV ? 'http://localhost:3001' : 'https://hexlands-server.onrender.com');
 
 class SocketService {
   private socket: TypedSocket | null = null;

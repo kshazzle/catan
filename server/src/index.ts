@@ -14,8 +14,14 @@ app.use(express.json());
 const httpServer = createServer(app);
 const io = new Server<ClientToServerEvents, ServerToClientEvents>(httpServer, {
   cors: {
-    origin: ['http://localhost:5173', 'http://localhost:3000'],
+    origin: [
+      'http://localhost:5173',
+      'http://localhost:3000',
+      'https://st-catan.web.app',
+      'https://st-catan.firebaseapp.com',
+    ],
     methods: ['GET', 'POST'],
+    credentials: true,
   },
 });
 
